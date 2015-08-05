@@ -99,3 +99,50 @@ func (b *Bot) SetWebhook(webhookUrl string) {
 	params.Set("url", webhookUrl)
 	b.newRequest("setWebhook", params)
 }
+
+//todo: implement optional parameters
+func (b *Bot) SendMessage(chat_id int, text string, disable_web_page_preview bool, reply_to_message_id int, reply_markup interface{}) (Message, error) {
+	params := url.Values{}
+	params.Set("chat_id", strconv.Itoa(chat_id))
+	params.Set("text", text)
+	resp, err := b.newRequest("sendMessage", params)
+	var message Message
+	json.Unmarshal(resp.Result, &message)
+	return message, err
+}
+
+func (b *Bot) forwardMessage() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendPhoto() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendAudio() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendDocument() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendSticker() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendVideo() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendLocation() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) sendChatAction() {
+	panic("Not Implemented")
+}
+
+func (b *Bot) getUserProfilePhotos() {
+	panic("Not Implemented")
+}
