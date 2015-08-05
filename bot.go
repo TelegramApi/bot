@@ -2,10 +2,10 @@ package telegram_bot
 
 import (
 	"encoding/json"
-	"net/http"
-	"net/url"
 	"fmt"
 	"io/ioutil"
+	"net/http"
+	"net/url"
 	"strconv"
 )
 
@@ -105,6 +105,11 @@ func (b *Bot) SendMessage(chat_id int, text string, disable_web_page_preview boo
 	params := url.Values{}
 	params.Set("chat_id", strconv.Itoa(chat_id))
 	params.Set("text", text)
+
+	keyboard, err := json.Marshal(reply_markup)
+
+	params.Set("reply_markup", string(keyboard))
+
 	resp, err := b.newRequest("sendMessage", params)
 	var message Message
 	json.Unmarshal(resp.Result, &message)
