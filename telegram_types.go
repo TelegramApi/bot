@@ -117,5 +117,4 @@ type ForceReply struct {
 	Selective  bool `json:"selective"`   //Optional. Use this parameter if you want to force reply from specific users only.
 }
 
-type InputFile struct {
-}
+type InputFile []byte
