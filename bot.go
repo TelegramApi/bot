@@ -227,7 +227,7 @@ func (b *Bot) sendSticker(chat_id int, sticker []byte, reply_to_message_id int, 
 	return message, err
 }
 
-func (b *Bot) sendVideo(chat_id int, video []byte, duration int, caption string, reply_to_message_id int, reply_markup interface{}) (Message, error)  {
+func (b *Bot) sendVideo(chat_id int, video []byte, duration int, caption string, reply_to_message_id int, reply_markup interface{}) (Message, error) {
 	params := url.Values{}
 	params.Set("chat_id", strconv.Itoa(chat_id))
 	params.Set("duration", strconv.Itoa(duration))
@@ -244,7 +244,7 @@ func (b *Bot) sendVideo(chat_id int, video []byte, duration int, caption string,
 	return message, err
 }
 
-func (b *Bot) sendLocation(chat_id int, latitude float64, longitude float64, reply_to_message_id int, reply_markup interface {}) (Message, error) {
+func (b *Bot) sendLocation(chat_id int, latitude float64, longitude float64, reply_to_message_id int, reply_markup interface{}) (Message, error) {
 	params := url.Values{}
 	params.Set("chat_id", strconv.Itoa(chat_id))
 	params.Set("latitude", strconv.FormatFloat(latitude, 'f', -1, 64))

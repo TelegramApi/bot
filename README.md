@@ -1,3 +1,6 @@
+[![license](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/TelegramApi/bot/master/LICENSE)
+[![Build Status](https://travis-ci.org/TelegramApi/bot.svg)](https://travis-ci.org/TelegramApi/bot)
+
 # Bot
 Telegram bot API library written in golang
 
